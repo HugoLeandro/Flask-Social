@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h3 style="color: #9A11BA">Contato</h3>
+        <hr>
+        <h4 style="color: #C3C3C3">leandrolimahugo@gmail.com</h4>
+        <a style="position:fixed;top: 45px;right: 70px;z-index: 99999;cursor:pointer;outline:none!important;" target="_blank" class="whatsapp hide-mobile" href="https://web.whatsapp.com/send?phone=558199831-5210&amp;text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%PyServices">
+        <img src="{{ url_for('static', filename='whatsapp.png') }}" alt=""></a>
+
+
+    </div>
+{% endblock %}

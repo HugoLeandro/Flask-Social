@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h4 style="color: #B3D816">Explore o Mundo da Tecnologia e Programação</h4>
+        <div class="container mt-5">
+        <div class=" p-blank container ">
+            <div style="color : #040C23" class="col">
+                <form method="POST" action="" class="border-none p-4 mt-2">
+                    {{ form.csrf_token }}
+                    <legend style="color: #C3C3C3">Criar Post</legend>
+                    <fieldset>
+                        <div style="color: #C3C3C3" class="form-group">
+                            {{ form.titulo.label(class="form-control-label") }}
+                            {% if form.titulo.errors %}
+                                {{ form.titulo(class="form-control is-invalid") }}
+                            <div style="color: #C3C3C3" class="invalid-feedback">
+                                {% for erro in form.titulo.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form.titulo(class="form-control btn-outline-light text-dark mt-2") }}
+                            {% endif %}
+                        </div>
+                        <div style="color: #C3C3C3" class="form-group mt-2">
+                            {{ form.corpo.label(class="form-control-label") }}
+                            {% if form.corpo.errors %}
+                                {{ form.corpo(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form.corpo.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form.corpo(class="form-control btn-outline-light text-dark mt-2") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    {{ form.botao_submit(class="btn btn-secondary mt-3 btn-secondary text-light") }}
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+{% endblock %}
